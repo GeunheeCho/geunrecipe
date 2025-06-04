@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Recipe</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <div id="root" class="container">
+        <div class="page-header">
+            <h2>Your Recipe:</h2>
+            <p>{{recipe|safe}}</p>
+            <a href="/">Generate another recipe</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
