@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
-    <h2>Input 3 Ingredients</h2>
-    <form action="/generate_recipe" method="post">
-        <input type="text" name="ingredient" placeholder="Ingredient 1" required>
-        <input type="text" name="ingredient" placeholder="Ingredient 2" required>
-        <input type="text" name="ingredient" placeholder="Ingredient 3" required>
-        <label class="subheading" for="cuisine">Choose a cuisine:</label>
-        <select name="cuisine" id="cuisine">
-            {% for cuisine in cuisines %}
-            <option value="{{cuisine|lower|replace('','_')}}">
-                {{cuisine}}
+    {% extends "base.html" %}
+    {% block content %}
+
+    <div class="container">
+        <h2>Input 3 Ingredients</h2>
+        <form action="/generate_recipe" method="post">
+            <input type="text" name="ingredient" placeholder="Ingredient 1" required>
+            <input type="text" name="ingredient" placeholder="Ingredient 2" required>
+            <input type="text" name="ingredient" placeholder="Ingredient 3" required>
+            <label class="subheading" for="cuisine">Choose a cuisine:</label>
+            <select name="cuisine" id="cuisine">
+                {% for cuisine in cuisines %}
+                <option value="{{cuisine|lower|replace('','_')}}">
+                    {{cuisine}}
             </option>
             {% endfor %}
         </select>
@@ -41,5 +45,7 @@
         </select>
         <input type="submit" value="Generate Recipe">
     </form>
+    </div>
+{% endblock %}
 </body>
 </html>

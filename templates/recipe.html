@@ -6,8 +6,15 @@
     <title>Generated Recipe</title>
 </head>
 <body>
-    <h2>Your Recipe:</h2>
-    <p>{{recipe|safe}}</p>
-    <a href="/">Generate another recipe</a>
+    {% extends "base.html" %}
+    {% block content %}
+    <div id="root" class="container">
+        <div class="page-header">
+            <h2>Your Recipe:</h2>
+            <p>{{recipe|safe}}</p>
+            <a href="/">Generate another recipe</a>
+        </div>
+    </div>
+    {% endblock %}
 </body>
 </html>
